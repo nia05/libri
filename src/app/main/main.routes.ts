@@ -14,7 +14,7 @@ export const MAIN_ROUTES: Routes = [
             {
                 path: 'books',
                 loadChildren: () =>
-                import('./book/books.routes').then((m) => m.BOOKS_ROUTES),
+                import('./books/books.routes').then((m) => m.BOOKS_ROUTES),
             },
             {
                 path: '',
