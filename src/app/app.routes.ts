@@ -1,9 +1,14 @@
 import { Routes } from '@angular/router';
 
-import { LoginPageComponent } from './features/login/pages/login-page/login-page.component';
-import { MainComponent } from './core/components/main/main.component';
-
 export const routes: Routes = [
-    { path: 'login', component: LoginPageComponent},
-    { path: '', component: MainComponent}
+    {
+      path: 'login',
+      loadChildren: () =>
+        import('./login/login.routes').then((m) => m.LOGIN_ROUTES)
+    },
+    {
+      path: '',
+      loadChildren: () =>
+        import('./main/main.routes').then((m) => m.MAIN_ROUTES)
+    }
 ];
